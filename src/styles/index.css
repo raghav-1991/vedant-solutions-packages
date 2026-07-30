@@ -1,0 +1,516 @@
+:root {
+  --brand: #ff4f00;
+  --brand-soft: #fff4ef;
+  --brand-border: #ffd9c7;
+  --ink: #111827;
+  --ink-soft: #374151;
+  --muted: #6b7280;
+  --faint: #9ca3af;
+  --line: #e5e7eb;
+  --line-soft: #f3f4f6;
+  --green: #16a34a;
+  --green-soft: #e9f9ef;
+  --bg: #ffffff;
+  --radius: 16px;
+  --radius-sm: 12px;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-highlight: 0 20px 40px -12px rgba(255, 79, 0, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- Layout ---------- */
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 56px 24px;
+}
+
+/* ---------- Header ---------- */
+.page-header {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-logo {
+  height: 40px;
+  width: auto;
+  margin: 0 auto 16px;
+  display: block;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--brand);
+  background: var(--brand-soft);
+  border-radius: 999px;
+}
+
+.page-title {
+  margin: 16px 0 0;
+  font-size: 32px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.page-subtitle {
+  margin: 16px 0 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.loading {
+  margin-top: 56px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ---------- Cards grid ---------- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 56px;
+  align-items: stretch;
+}
+
+@media (min-width: 900px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- Card ---------- */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+.card--highlight {
+  border: 2px solid var(--brand);
+  box-shadow: var(--shadow-highlight);
+}
+
+.card-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--brand);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.card-head {
+  padding: 24px 24px 20px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.card-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.card-name {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.card-tier {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.card-subtitle {
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.card-tagline {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ---------- Price ---------- */
+.price {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+.price-amount {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.price-gst {
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.price-note {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.price-note strong {
+  color: var(--ink);
+}
+
+/* ---------- CTA (Razorpay payment button) ---------- */
+.razorpay-form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.razorpay-form .PaymentButton {
+  width: 100%;
+  background: var(--brand) !important;
+  border-color: var(--brand) !important;
+  font-style: normal !important;
+}
+
+.razorpay-form .PaymentButton::before {
+  display: none !important;
+}
+
+.razorpay-form .PaymentButton svg {
+  display: none !important;
+}
+
+.razorpay-form .PaymentButton-securedBy {
+  display: none !important;
+}
+
+.razorpay-form .PaymentButton-contents {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 4px 16px !important;
+}
+
+.razorpay-form .PaymentButton-text {
+  font-size: 18px !important;
+}
+
+.test-button-wrap {
+  max-width: 280px;
+  margin: 32px auto 0;
+}
+
+.pay-terms {
+  margin: 12px 0 0;
+  font-size: 12px;
+  text-align: center;
+  color: var(--faint);
+}
+
+/* ---------- Card body / features ---------- */
+.card-body {
+  flex: 1;
+  padding: 24px;
+}
+
+.feature-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 16px;
+  background: var(--line-soft);
+  border-radius: 10px;
+}
+
+.feature-tab {
+  flex: 1;
+  padding: 8px 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.feature-tab.is-active {
+  background: #fff;
+  color: var(--ink-soft);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.feature-tab.is-active.is-included {
+  color: var(--brand);
+}
+
+.feature-tab:focus-visible {
+  outline: 2px solid rgba(255, 79, 0, 0.4);
+  outline-offset: 1px;
+}
+
+.all-included {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand);
+  background: var(--brand-soft);
+  border-radius: 10px;
+}
+
+.feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feature-item {
+  display: flex;
+  gap: 12px;
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  border-radius: 999px;
+}
+
+.feature-icon--yes {
+  color: var(--green);
+  background: var(--green-soft);
+}
+
+.feature-icon--no {
+  color: var(--faint);
+  background: var(--line-soft);
+}
+
+.feature-text {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+.feature-text--muted {
+  color: var(--muted);
+}
+
+.feature-title {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.feature-desc {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+}
+
+.read-more-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  margin-top: 16px;
+  padding: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--brand);
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--line-soft);
+  cursor: pointer;
+}
+
+.read-more-toggle:hover {
+  color: var(--ink);
+}
+
+.read-more-toggle:focus-visible {
+  outline: 2px solid rgba(255, 79, 0, 0.4);
+  outline-offset: 2px;
+}
+
+/* ---------- Terms ---------- */
+.terms {
+  max-width: 760px;
+  margin: 64px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.terms-title {
+  margin: 0 0 8px;
+  font-size: 26px;
+  font-weight: 800;
+  text-align: center;
+  color: var(--ink);
+}
+
+.accordion {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.accordion-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 20px;
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--faint);
+}
+
+.accordion-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.accordion-head:focus-visible {
+  outline: 2px solid rgba(255, 79, 0, 0.4);
+  outline-offset: -2px;
+}
+
+.accordion-body {
+  padding: 0 20px 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.terms-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.terms-line {
+  display: flex;
+  gap: 8px;
+}
+
+.terms-check {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--brand);
+}
+
+/* ---------- Disclaimer ---------- */
+.disclaimer {
+  margin-top: 8px;
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  background: var(--brand-soft);
+  border: 1px solid var(--brand-border);
+  border-radius: var(--radius-sm);
+}
+
+.disclaimer-title {
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.disclaimer p {
+  margin: 0;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-title {
+    font-size: 26px;
+  }
+  .container {
+    padding: 40px 16px;
+  }
+}
