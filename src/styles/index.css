@@ -130,16 +130,6 @@ body {
   transform: translateY(-4px);
 }
 
-.card--highlight {
-  border: 2px solid var(--brand);
-  box-shadow: var(--shadow-highlight);
-}
-
-.card--highlight:hover,
-.card--highlight:focus-within {
-  transform: translateY(-4px);
-}
-
 .card-badge {
   position: absolute;
   top: -12px;
@@ -402,6 +392,37 @@ body {
 .read-more-toggle:focus-visible {
   outline: 2px solid rgba(255, 79, 0, 0.4);
   outline-offset: 2px;
+}
+
+/* ---------- Terms link (pricing page) ---------- */
+.terms-link-row {
+  margin: 40px 0 0;
+  text-align: center;
+}
+
+.terms-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.terms-link:hover {
+  color: var(--ink);
+}
+
+/* ---------- Back link (terms page) ---------- */
+.back-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.back-link:hover {
+  color: var(--ink);
 }
 
 /* ---------- Terms ---------- */

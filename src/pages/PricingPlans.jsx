@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header.jsx";
 import PackageCard from "../components/PackageCard.jsx";
-import TermsSection from "../components/TermsSection.jsx";
 import { loadPackages } from "../services/packagesApi.js";
 
 export default function PricingPlans() {
   const [packages, setPackages] = useState([]);
-  const [terms, setTerms] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -14,7 +12,6 @@ export default function PricingPlans() {
     loadPackages().then((data) => {
       if (!alive) return;
       setPackages(data.packages);
-      setTerms(data.terms);
       setLoading(false);
     });
     return () => {
@@ -42,7 +39,11 @@ export default function PricingPlans() {
               ))}
             </div>
 
-            {terms && <TermsSection terms={terms} />}
+            <p className="terms-link-row">
+              <a className="terms-link" href="/terms.html">
+                Payment terms &amp; conditions
+              </a>
+            </p>
           </>
         )}
       </div>

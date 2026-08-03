@@ -4,7 +4,7 @@ import RazorpayButton from "./RazorpayButton.jsx";
 
 export default function PackageCard({ pkg, collapsible = false, previewCount }) {
   return (
-    <article className={"card" + (pkg.highlight ? " card--highlight" : "")}>
+    <article className="card">
       {pkg.highlight && <div className="card-badge">Recommended</div>}
 
       <div className="card-head">
