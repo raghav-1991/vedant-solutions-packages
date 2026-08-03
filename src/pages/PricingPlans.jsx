@@ -38,12 +38,6 @@ export default function PricingPlans() {
                 />
               ))}
             </div>
-
-            <p className="terms-link-row">
-              <a className="terms-link" href="/terms.html">
-                Payment terms &amp; conditions
-              </a>
-            </p>
           </>
         )}
       </div>

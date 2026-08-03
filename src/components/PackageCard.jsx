@@ -28,6 +28,12 @@ export default function PackageCard({ pkg, collapsible = false, previewCount }) 
       <div className="card-body">
         <FeatureToggle pkg={pkg} collapsible={collapsible} previewCount={previewCount} />
 
+        <p className="terms-link-row">
+          <a className="terms-link" href="/terms.html">
+            Payment terms &amp; conditions
+          </a>
+        </p>
+
         <RazorpayButton paymentButtonId={pkg.paymentButtonId} label="Select" />
 
         <p className="pay-terms">50% before counselling · 50% after seat allotment</p>
