@@ -47,14 +47,13 @@ export default function FeatureToggle({ pkg, collapsible = false, previewCount }
 
       {tab === "included" && (
         <ul className="feature-list">
-          {visibleList.map(([title, desc], i) => (
+          {visibleList.map((title, i) => (
             <li key={i} className="feature-item">
               <span className="feature-icon feature-icon--yes" aria-hidden="true">
                 <Check size={13} strokeWidth={3} />
               </span>
               <span className="feature-text">
                 <span className="feature-title">{title}</span>
-                {desc ? <span className="feature-desc">{desc}</span> : null}
               </span>
             </li>
           ))}

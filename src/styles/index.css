@@ -365,12 +365,6 @@ body {
   color: var(--ink);
 }
 
-.feature-desc {
-  display: block;
-  margin-top: 2px;
-  color: var(--muted);
-}
-
 .read-more-toggle {
   display: flex;
   align-items: center;

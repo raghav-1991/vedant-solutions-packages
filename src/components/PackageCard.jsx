@@ -5,7 +5,7 @@ import RazorpayButton from "./RazorpayButton.jsx";
 export default function PackageCard({ pkg, collapsible = false, previewCount }) {
   return (
     <article className={"card" + (pkg.highlight ? " card--highlight" : "")}>
-      {pkg.highlight && <div className="card-badge">Most Complete</div>}
+      {pkg.highlight && <div className="card-badge">Recommended</div>}
 
       <div className="card-head">
         <div className="card-name-row">
@@ -23,14 +23,14 @@ export default function PackageCard({ pkg, collapsible = false, previewCount }) 
           GST (18%) {inr(pkg.gst)} · Total payable{" "}
           <strong>{inr(pkg.total)}</strong>
         </p>
-
-        <RazorpayButton paymentButtonId={pkg.paymentButtonId} />
-
-        <p className="pay-terms">50% before counselling · 50% after seat allotment</p>
       </div>
 
       <div className="card-body">
         <FeatureToggle pkg={pkg} collapsible={collapsible} previewCount={previewCount} />
+
+        <RazorpayButton paymentButtonId={pkg.paymentButtonId} label="Select" />
+
+        <p className="pay-terms">50% before counselling · 50% after seat allotment</p>
       </div>
     </article>
   );
