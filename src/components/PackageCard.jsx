@@ -29,7 +29,7 @@ export default function PackageCard({ pkg, collapsible = false, previewCount }) 
         <FeatureToggle pkg={pkg} collapsible={collapsible} previewCount={previewCount} />
 
         <p className="terms-link-row">
-          <a className="terms-link" href="/terms.html">
+          <a className="terms-link" href="/terms.html" target="_blank" rel="noopener noreferrer">
             Payment terms &amp; conditions
           </a>
         </p>
