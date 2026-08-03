@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Header from "../components/Header.jsx";
 import PackageCard from "../components/PackageCard.jsx";
 import TermsSection from "../components/TermsSection.jsx";
-import RazorpayButton from "../components/RazorpayButton.jsx";
 import { loadPackages } from "../services/packagesApi.js";
 
 export default function PricingPlans() {
@@ -41,13 +40,6 @@ export default function PricingPlans() {
                   previewCount={packages[0]?.included.length}
                 />
               ))}
-            </div>
-
-            <div className="test-button-wrap">
-              <RazorpayButton
-                paymentButtonId="pl_TJoD70mH0OOs7b"
-                label="Pay Now 1rs for Testing"
-              />
             </div>
 
             {terms && <TermsSection terms={terms} />}
